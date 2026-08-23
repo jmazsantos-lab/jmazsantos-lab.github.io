@@ -10,4 +10,4 @@ Here I want to share with you some tools which I have created with artificial in
 ## Nombre de tu herramienta
 Lean Six Sigma Master Tool
 
-[Descargar (.xlsx)](/descargas/nombre-herramienta.xlsx){: .btn .btn--success .btn--large}
+[Descargar (.xlsx)](/descargas/MasterToolLeanSixSigmaBlackBelt.xlsx){: .btn .btn--success .btn--large}
