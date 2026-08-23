@@ -5,7 +5,7 @@ main:
     url: /blog/
   - title: "CV"
     url: /cv/
-  - title: "Brewing Tools"
-    url: /brewingtools/
+  - title: "Productivity Tools"
+    url: /tools/
   - title: "Reach Me"
     url: /contact/
