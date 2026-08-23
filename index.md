@@ -7,7 +7,7 @@ header:
 permalink: /
 ---
 
-After near a decade working in Brewing and Packaging, I want to share what I know of Continuous Improvement, Lean Six Sigma, Manufacturing Operations, and tools which I have created using AI for the routing work in the factory. 
+After near a decade working in Brewing and Packaging, I want to share what I know of Continuous Improvement, Lean Six Sigma, Manufacturing Operations, and downloadable tools which I have created using AI for the routine work in the factory. 
 
 [Read my Posts](/blog/){: .btn .btn--primary .btn--large}
 [My CV](/cv/){: .btn .btn--primary .btn--large}
