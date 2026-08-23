@@ -19,7 +19,7 @@ So I decided to retake this small project to solve both of the problems mentione
 When you open it, it helps you follow a structure to your LSS project  (in 8 different ways) so, depending on what you know, your resources and time frame, and knowledge, you can complete the job easily and efficiently. 
 
 
-[Descargar (.xlsx)](/descargas/MasterToolLeanSixSigmaBlackBelt.xlsx){: .btn .btn--success .btn--large}
+[Download Master Tool Lean Six Sigma (.xlsx)](/descargas/MasterToolLeanSixSigmaBlackBelt.xlsx){: .btn .btn--success .btn--large}
 
 ## Tool 2
 Esto es una prueba
