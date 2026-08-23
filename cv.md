@@ -7,4 +7,6 @@ author_profile: true
 
 If you want to see my professional history, download here my CV
 
-[Descargar CV (PDF)](/descargas/CV-Jose-Zapatero.pdf){: .btn .btn--primary .btn--large}
+[Download my CV in English (PDF)](/descargas/JoseZapatero-CV-EN.pdf){: .btn .btn--primary .btn--large}
+[Descargar my CV in English with Portrait (PDF)](/descargas/JoseZapateroPhoto-CV-EN.pdf){: .btn .btn--primary .btn--large}
+[Descargar mi CV en Espanol (PDF)](/descargas/JoseZapatero-CV-ES.pdf){: .btn .btn--primary .btn--large}
