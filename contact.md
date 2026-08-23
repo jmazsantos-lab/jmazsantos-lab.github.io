@@ -5,7 +5,7 @@ permalink: /contact/
 author_profile: true
 ---
 
-Would you like to talk to me about a post, a tool, my career or simply ay Hello? Reach out!
+Would you like to talk to me about a post, a tool, my career or simply say Hello? Reach out!
 
 <form action="https://formspree.io/f/TU_ID_DE_FORMULARIO" method="POST">
   <p>
