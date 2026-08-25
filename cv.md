@@ -3,9 +3,6 @@ layout: single
 title: "CV"
 permalink: /cv/
 author_profile: true
-toc: true
-toc_label: "Contents"
-toc_icon: "list"
 ---
 
 <div style="text-align:center; margin-bottom: 2em;">
