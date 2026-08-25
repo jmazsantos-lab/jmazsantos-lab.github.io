@@ -9,4 +9,95 @@
   .page__title, .archive__item-title {
     font-family: "Spectral", serif !important;
   }
+
+  body, a, button {
+    cursor: url('/assets/images/cursor-hop.png') 16 16, auto;
+  }
+
+  .post-engagement {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 0 1.5em;
+    font-size: 0.9em;
+    color: #6b6b6b;
+  }
+  .post-engagement .post-views {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+  }
+  .post-engagement .post-like-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    background: transparent;
+    border: 1px solid #c9c9c9;
+    border-radius: 999px;
+    padding: 0.3em 0.9em;
+    font-size: 1em;
+    color: #6b6b6b;
+    transition: all 0.15s ease;
+  }
+  .post-engagement .post-like-btn:not(:disabled):hover {
+    border-color: #4a8f3c;
+    color: #4a8f3c;
+  }
+  .post-engagement .post-like-btn.liked {
+    background: #eaf4e6;
+    border-color: #4a8f3c;
+    color: #2f5e26;
+  }
+  .post-engagement .post-like-btn:disabled {
+    cursor: default;
+  }
 </style>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var content = document.querySelector('.page__content');
+    var meta = document.querySelector('.page__meta');
+    if (!content || !meta || !meta.querySelector('time')) return;
+
+    var namespace = 'jmazsantos-lab-github-io';
+    var key = encodeURIComponent(location.pathname);
+
+    var widget = document.createElement('div');
+    widget.className = 'post-engagement';
+    widget.innerHTML =
+      '<span class="post-views"><i class="fas fa-fw fa-eye" aria-hidden="true"></i><span id="pv-count">&hellip;</span> views</span>' +
+      '<button type="button" id="pv-like-btn" class="post-like-btn"><i class="fas fa-fw fa-seedling" aria-hidden="true"></i><span id="pv-like-count">&hellip;</span></button>';
+    content.parentNode.insertBefore(widget, content);
+
+    fetch('https://abacus.jasoncameron.dev/hit/' + namespace + '/views-' + key)
+      .then(function (r) { return r.json(); })
+      .then(function (d) { document.getElementById('pv-count').textContent = d.value; })
+      .catch(function () { document.getElementById('pv-count').textContent = '–'; });
+
+    var likeStorageKey = 'liked-' + key;
+    var likeBtn = document.getElementById('pv-like-btn');
+    var likeCountEl = document.getElementById('pv-like-count');
+    var alreadyLiked = localStorage.getItem(likeStorageKey) === '1';
+
+    fetch('https://abacus.jasoncameron.dev/get/' + namespace + '/likes-' + key)
+      .then(function (r) { return r.json(); })
+      .then(function (d) { likeCountEl.textContent = d.value; })
+      .catch(function () { likeCountEl.textContent = '0'; });
+
+    if (alreadyLiked) {
+      likeBtn.classList.add('liked');
+      likeBtn.disabled = true;
+    }
+
+    likeBtn.addEventListener('click', function () {
+      if (localStorage.getItem(likeStorageKey) === '1') return;
+      fetch('https://abacus.jasoncameron.dev/hit/' + namespace + '/likes-' + key)
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          likeCountEl.textContent = d.value;
+          localStorage.setItem(likeStorageKey, '1');
+          likeBtn.classList.add('liked');
+          likeBtn.disabled = true;
+        });
+    });
+  });
+</script>
