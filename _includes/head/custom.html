@@ -74,7 +74,9 @@
     if (!content || !isPost) return;
 
     var namespace = 'jmazsantos-lab-github-io';
-    var key = encodeURIComponent(location.pathname);
+    var segments = location.pathname.split('/').filter(Boolean);
+    var slug = segments.length ? segments[segments.length - 1].replace(/\.html?$/, '') : 'home';
+    var key = encodeURIComponent(slug);
 
     var widget = document.createElement('div');
     widget.className = 'post-engagement';
