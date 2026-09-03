@@ -1,6 +1,6 @@
 ---
 layout: splash
-title: "Jose Zapatero"
+title: "Jose Zapatero 🦄"
 excerpt: "Brewing and FMCG Professional"
 header:
   overlay_color: "#1F3A56"
