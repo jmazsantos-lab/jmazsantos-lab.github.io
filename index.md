@@ -3,7 +3,7 @@ layout: splash
 title: "Jose Zapatero 🦄"
 excerpt: "Brewing and FMCG Professional"
 header:
-  overlay_color: "#1F3A56"
+  overlay_color: "#db2777"
 permalink: /
 ---
 
