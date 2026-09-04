@@ -1,55 +1,38 @@
-locale: "en-EN"
-title: "Jose Zapatero"
-title_separator: "-"
-name: "JoseZapatero"
-description: "Brewing and FMCG Professional"
+title: "José Zapatero"
+description: "Manufacturing operations in brewing and FMCG — notes and tools."
 url: "https://jmazsantos-lab.github.io"
 baseurl: ""
+lang: "en"
 
-remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "mint"
-
-plugins:
-  - jekyll-remote-theme
-  - jekyll-include-cache
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-paginate
-
-markdown: kramdown
-paginate: 5
-paginate_path: /page:num/
+role_en: "Packaging &amp; Manufacturing Excellence Manager"
+role_es: "Responsable de Excelencia en Envasado y Fabricación"
 
 author:
-  name: "José Zapatero"
-  bio: "Packaging & Manufacturing Excellence Manager"
-  location: "Cuba"
-  links:
-    - label: "Mail"
-      icon: "fas fa-fw fa-envelope"
-      url: "mailto:jmazsantos@gmail.com"
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/josemariazapaterosantos"
+  name: "José María Zapatero Santos"
+  email: "jmazsantos@gmail.com"
+  linkedin: "https://www.linkedin.com/in/josemariazapaterosantos"
 
-footer:
-  links:
-    - label: "Mail"
-      icon: "fas fa-fw fa-envelope"
-      url: "mailto:jmazsantos@gmail.com"
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+timezone: Europe/Madrid
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
 
 defaults:
   - scope:
       path: ""
       type: posts
     values:
-      layout: single
-      author_profile: true
-      read_time: true
-      share: true
-      related: true
+      layout: post
   - scope:
       path: ""
     values:
-      layout: single
-      author_profile: true
+      layout: page

@@ -1,0 +1,90 @@
+---
+layout: default
+---
+{% assign h = site.data.home %}
+{% assign posts = site.posts | where_exp: "p", "p.hidden != true" %}
+{% assign featured = posts | first %}
+
+<div class="wrap">
+  {% include masthead.html %}
+
+  <section class="hero">
+    <img src="{{ '/assets/images/jose-zapatero-cv.jpg' | relative_url }}"
+         alt="{{ site.author.name }}" width="190" height="238">
+    <div>
+      <h1><span data-es="{{ h.position_es }}">{{ h.position_en }}</span></h1>
+      <p><span data-es="{{ h.intro_es }}">{{ h.intro_en }}</span></p>
+      <div class="cta">
+        <a class="btn" href="{{ '/blog/' | relative_url }}"><span data-es="Leer el blog">Read the blog</span></a>
+        <a class="more-link" href="{{ '/tools/' | relative_url }}"><span data-es="Las herramientas &rarr;">The tools &rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="writing">
+    <h2 class="section__label"><span data-es="Blog">Writing</span></h2>
+    {% if featured %}
+    <a class="feat" href="{{ featured.url | relative_url }}">
+      <span class="feat__meta">{{ featured.date | date: "%-d %b %Y" }}{% if featured.categories %} &middot; {{ featured.categories | first }}{% endif %}</span>
+      <h2>{{ featured.title }}</h2>
+      <p class="drop">{{ featured.excerpt | strip_html | strip_newlines | truncate: 300 }}</p>
+      <span class="readmore"><span data-es="Seguir leyendo &rarr;">Continue reading &rarr;</span></span>
+    </a>
+    {% endif %}
+
+    {% assign rest = posts | offset: 1 %}
+    {% if rest.size > 0 %}
+    <ul class="postlist">
+      {% for p in rest limit: 5 %}
+      <li><a href="{{ p.url | relative_url }}">
+        <span class="d">{{ p.date | date: "%-d %b %Y" }}</span>
+        <h3>{{ p.title }}</h3>
+      </a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    <ul class="topics">
+      {% for t in site.data.topics %}
+      <li>
+        <h3><span data-es="{{ t.title_es }}">{{ t.title_en }}</span></h3>
+        <p><span data-es="{{ t.desc_es }}">{{ t.desc_en }}</span></p>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="section" id="tools">
+    <h2 class="section__label"><span data-es="Herramientas">Tools</span></h2>
+    {% for tool in site.data.tools %}
+    <div class="tool">
+      <div class="tool__h">
+        <h3><span data-es="{{ tool.name_es }}">{{ tool.name_en }}</span></h3>
+        {% if tool.tag_en %}<span class="tool__tag"><span data-es="{{ tool.tag_es }}">{{ tool.tag_en }}</span></span>{% endif %}
+      </div>
+      <p><span data-es="{{ tool.desc_es }}">{{ tool.desc_en }}</span></p>
+      {% if tool.file %}<a class="more-link" href="{{ tool.file | relative_url }}"><span data-es="{{ tool.cta_es }}">{{ tool.cta_en }}</span> &rarr;</a>{% endif %}
+    </div>
+    {% endfor %}
+  </section>
+
+  <section class="section" id="background">
+    <h2 class="section__label"><span data-es="Trayectoria">Background</span></h2>
+    <div class="roles">
+      {% for r in site.data.cv.roles %}
+      <div class="role">
+        <div class="role__y">{{ r.years }}</div>
+        <div>
+          <h3><span data-es="{{ r.title_es }}">{{ r.title_en }}</span></h3>
+          <div class="role__org">{{ r.org }}</div>
+          <p><span data-es="{{ r.line_es }}">{{ r.line_en }}</span></p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="edu">
+      <span data-es="{{ site.data.cv.education_es }}">{{ site.data.cv.education_en }}</span>
+      &nbsp; <a href="{{ '/cv/' | relative_url }}"><span data-es="CV completo &rarr;">Full CV &rarr;</span></a>
+    </p>
+  </section>
+</div>

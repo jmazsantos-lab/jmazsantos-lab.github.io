@@ -1,0 +1,64 @@
+---
+layout: default
+---
+<div class="wrap">
+  {% include masthead.html inner=true %}
+
+  <article class="entry">
+    <p class="entry__meta">
+      {{ page.date | date: "%-d %B %Y" }}{% if page.categories %} &middot; {{ page.categories | join: ", " }}{% endif %}
+    </p>
+    <h1 class="entry__title">{{ page.title }}</h1>
+
+    <div class="post-engagement" data-slug="{{ page.slug | default: page.title | slugify }}">
+      <span class="post-views"><span id="pv-count">&hellip;</span>&nbsp;<span data-es="lecturas">views</span></span>
+      <button type="button" id="pv-like-btn" class="post-like-btn">&#9825;&nbsp;<span id="pv-like-count">&hellip;</span></button>
+    </div>
+
+    <div class="prose">
+      {{ content }}
+    </div>
+
+    <p style="max-width:62ch;margin:2.4em auto 0;">
+      <a class="more-link" href="{{ '/blog/' | relative_url }}"><span data-es="&larr; Todas las entradas">&larr; All posts</span></a>
+    </p>
+  </article>
+</div>
+
+<script>
+(function () {
+  var w = document.querySelector('.post-engagement');
+  if (!w) return;
+  var ns = 'jmazsantos-lab-github-io';
+  var key = encodeURIComponent(w.dataset.slug || 'home');
+  var vc = document.getElementById('pv-count');
+  var lc = document.getElementById('pv-like-count');
+  var btn = document.getElementById('pv-like-btn');
+  var lk = 'liked-' + key;
+
+  fetch('https://abacus.jasoncameron.dev/hit/' + ns + '/views-' + key)
+    .then(function (r) { return r.json(); })
+    .then(function (d) { vc.textContent = d.value; })
+    .catch(function () { vc.textContent = '–'; });
+
+  fetch('https://abacus.jasoncameron.dev/get/' + ns + '/likes-' + key)
+    .then(function (r) { return r.json(); })
+    .then(function (d) { lc.textContent = d.value; })
+    .catch(function () { lc.textContent = '0'; });
+
+  var liked = false;
+  try { liked = localStorage.getItem(lk) === '1'; } catch (e) {}
+  if (liked) { btn.classList.add('liked'); btn.disabled = true; }
+
+  btn.addEventListener('click', function () {
+    try { if (localStorage.getItem(lk) === '1') return; } catch (e) {}
+    fetch('https://abacus.jasoncameron.dev/hit/' + ns + '/likes-' + key)
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        lc.textContent = d.value;
+        try { localStorage.setItem(lk, '1'); } catch (e) {}
+        btn.classList.add('liked'); btn.disabled = true;
+      });
+  });
+})();
+</script>

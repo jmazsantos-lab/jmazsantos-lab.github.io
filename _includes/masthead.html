@@ -1,0 +1,14 @@
+{% assign inner = include.inner %}
+<header class="masthead{% if inner %} masthead--inner{% endif %}">
+  <p class="masthead__name"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></p>
+  <p class="masthead__role"><span data-es="{{ site.role_es }}">{{ site.role_en }}</span></p>
+  <nav class="nav" aria-label="Primary">
+    {% for item in site.data.navigation.main -%}
+    <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}><span data-es="{{ item.es }}">{{ item.title }}</span></a>
+    {%- endfor %}
+    <span class="nav__lang" role="group" aria-label="Language">
+      <button type="button" data-l="en" aria-pressed="true">EN</button>
+      <button type="button" data-l="es" aria-pressed="false">ES</button>
+    </span>
+  </nav>
+</header>

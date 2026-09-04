@@ -1,33 +1,20 @@
 ---
-layout: single
+layout: page
 title: "Tools"
 permalink: /tools/
-author_profile: true
+excerpt: "Productivity tools I build with AI for routine factory work — starting with a Lean Six Sigma Master Tool."
 ---
 
-Here I want to share with you some tools which I have created with artificial intelligence that help me in my day to day work, and may help you as well.
+Tools I've built with AI to help with day-to-day work in the factory. Free to download and use.
 
-<div class="tool-card" markdown="1">
+## Lean Six Sigma Master Tool
 
-## <i class="fas fa-fw fa-calculator"></i> Lean Six Sigma Master Tool
+Becoming a certified Lean Six Sigma Black Belt took me over a year. While preparing, two questions kept coming back: how do you *prove* your value as a Black Belt, and how do you reach a good conclusion as quickly and efficiently as possible — without getting lost among the dozens of tools and methods a Lean Six Sigma project can use?
 
-Some time ago I became a certified Lean Six Sigma Black Belt. This took me over a year to prepare and, in the process of preparing and understanding the tools, I was frequently thinking about two things:
+This Excel workbook is my answer. It gives you eight structured ways to run a project, so — depending on what you know, your resources and your timeframe — you can get the job done well and fast, whether or not you're a certified practitioner.
 
-1. What does it mean to be certified in Lean Six Sigma? This methodology is based on efficiency and continuous improvement. However, how do I prove my value as a LSSBB? And also, how do I reach a conclusion to a problem as fast and efficiently as possible? It would be paradoxical if a LSS professional were inefficient when it comes to finding the right tool for a certain situation — something quite easy to be, knowing how many different tools and methods there are when approaching a Lean Six Sigma project. But... how can I make it efficient?
-2. It would be great if there was a way to navigate all the tools, even if you are not a certified professional in the matter, to help yourself and your company whenever there is a problem. Has no one thought of this before?
+<p><a class="btn" href="/descargas/MasterToolLeanSixSigmaBlackBelt.xlsx">Download Master Tool (.xlsx)</a></p>
 
-I started working on a solution, but it was very time consuming and not very useful, so I parked it. However, a few months later I discovered the power of AI and its potential for making productivity tools. So I decided to retake this small project to solve both of the problems mentioned above, and the way I did it was by creating this Excel file.
+## More tools, in progress
 
-When you open it, it helps you follow a structure for your LSS project (in 8 different ways) so, depending on what you know, your resources, your time frame, and your knowledge, you can complete the job easily and efficiently.
-
-[Download Master Tool Lean Six Sigma (.xlsx)](/descargas/MasterToolLeanSixSigmaBlackBelt.xlsx){: .btn .btn--success .btn--large}
-
-</div>
-
-<div class="tool-card tool-card--placeholder" markdown="1">
-
-## <i class="fas fa-fw fa-tools"></i> More tools, coming soon
-
-I'm working on new productivity tools to share here — check back soon.
-
-</div>
+I'm building new productivity tools for the routine work in the factory — planning, standards, shift handovers. They'll appear here as they're ready.
