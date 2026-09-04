@@ -1,11 +1,13 @@
 main:
-  - title: "Home"
-    url: /
-  - title: "Blog"
+  - title: "Writing"
+    es: "Blog"
     url: /blog/
-  - title: "CV"
-    url: /cv/
-  - title: "Productivity Tools"
+  - title: "Tools"
+    es: "Herramientas"
     url: /tools/
-  - title: "Reach Me"
+  - title: "CV"
+    es: "CV"
+    url: /cv/
+  - title: "Contact"
+    es: "Contacto"
     url: /contact/

@@ -1,6 +1,5 @@
 ---
-layout: home
-title: "Blog"
+layout: list
+title: "Writing"
 permalink: /blog/
-author_profile: true
 ---

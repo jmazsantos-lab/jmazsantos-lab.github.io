@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<div class="wrap">
+  {% include masthead.html inner=true %}
+  <article class="entry">
+    {% unless page.hide_title %}<h1 class="entry__title">{{ page.title }}</h1>{% endunless %}
+    <div class="prose">
+      {{ content }}
+    </div>
+  </article>
+</div>
